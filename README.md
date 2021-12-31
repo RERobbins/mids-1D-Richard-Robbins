@@ -47,7 +47,7 @@ I invoke the http server with the command `./darkhttpd/darkhttp ~/website --port
 
 + After I started the http server I was able to modify the files that appear by making changes to index.html.  Those changes became apparent without the need to restart the server. Web servers access the served pages at runtime so changes made to the served pages are reflected once they are made without the need to restart the server itself.
 
-+ I use ps aux | grep httpd to identify the process id of the web server.  The `ps aux` command produces a list of running processes.  I pipe the results to `grep` to filter only those processes containing the string `httpd`.  The first line below shows that the pid for the server is `66852` and the second line is the ID for the `grep` process itself.
++ I use `ps aux | grep httpd` to identify the process id of the web server.  The `ps aux` command produces a list of running processes.  I pipe the results to `grep` to filter only those processes containing the string `httpd`.  The first line below shows that the pid for the server is `66852` and the second line is the ID for the `grep` process itself.
 
 ```
 Last login: Thu Dec 30 21:15:55 2021 from 198.183.251.204
