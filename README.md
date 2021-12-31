@@ -45,7 +45,7 @@ I invoke the http server with the command `./darkhttpd/darkhttp ~/website --port
 
 + The static website served by `darkhttp` satisfies the Challenge.  On my local network, I access the site from any browser via `http://basics.itinker.net:12345`.  All of the images appear in the format required.
 
-+ After I started the http server I was able to modify the files that appear by making changes to index.html.  Those changes became apparent without the need to restart the server. Web servers access the served pages at runtime so changes made to the served pages are reflected once they are made without the need to restart the server itself.
++ After I started the http server I was able to modify the files that appear by making changes to `index.html`.  Those changes became apparent without the need to restart the server. Web servers access the served pages at runtime so changes made to the served pages are reflected once they are made without the need to restart the server itself.
 
 + I use `ps aux | grep httpd` to identify the process id of the web server.  The `ps aux` command produces a list of running processes.  I pipe the results to `grep` to filter only those processes containing the string `httpd`.  The first line below shows that the pid for the server is `66852` and the second line is the ID for the `grep` process itself.
 
@@ -57,6 +57,6 @@ rerobbi+   68309  0.0  0.0   6548  2440 pts/0    S+   22:16   0:00 grep --color=
 rerobbins@basics:~$ 
 ```
 
-+ The bash shell script `project.sh` which is included in this repository contains my solution to the challenge task.  It is intended to be placed in the root directory of the sample site and invoked from the command line as `./project.sh > index.html`  That script renames files that include non-ASCII characters in their names using the `iconv` command which is included in the Ubuntu distribution.  It then creates the requisite `index.html` file, relying, in part on `HERE-docs` and makes use of loops and conditions.
++ The bash shell script `project.sh` which is included in this repository contains my solution to the challenge task.  It is intended to be placed in the root directory of the sample site and invoked from the command line as `./project.sh > index.html`  That script renames files that include non-ASCII characters in their names using the `iconv` command which is included in the Ubuntu distribution.  I use the `iconv` transliteration feaure to remove accents, split ligatures and do many other generic transliterations.  So, for example, the filename `Gráfico de dos funciones 01.jpg` becomes `Grafico de dos funciones 01.jpg`. It then creates the requisite `index.html` file, relying, in part on `HERE-docs` and makes use of loops and conditions.
 
 
